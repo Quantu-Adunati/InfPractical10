@@ -37,8 +37,13 @@ def generateRandom(dividedNumber):
 
 def sortList(sList):
     slist =  sorted(sList,key=lambda word: sum(vowels in 'aeiou' for vowels in word), reverse=True)
+    n = 0
     for x in slist:
-        print(x)
+        n = 0
+        for i in x:
+            if( i == 'e') or (i =='a') or (i=='i') or (i=='o') or (i=='u'):
+                n = n +1
+        print(x + " (Vowels: "+str(n)+")")
     return 0
 
 numPrimeNumbers = countPrime(studentNumberList)
